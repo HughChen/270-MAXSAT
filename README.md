@@ -1,0 +1,2 @@
+# 270MAXSAT420
+MAXSAT project for CS270.
