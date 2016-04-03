@@ -21,6 +21,12 @@ def parse_line(line,variables):
 
 
 def parse_input(filename,loc=input_file_location):
+  '''Input: name of the file in the 'input/' directory.
+  Output: a tuple of (VARDICT,clauses).
+  VARDICT is a dictionary with unique keys equal to literals.
+  clauses is a list of strings that are inputs to the eval() function.
+  '''
+  global VARDICT,clauses
   filename = loc + filename
   clauses = list()
   VARDICT = dict()
