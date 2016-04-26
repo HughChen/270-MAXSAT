@@ -8,10 +8,8 @@ def exhaustive_solver(filename):
   max_true - the optimal number of satisfied clauses.
   best_combo - a dict with one set of optimal assignments.
   ''' 
-  # Load clauses
+  # Load clauses for basic exhaustive search
   (VARDICT,clauses) = parse_file(filename)
-  
-  # Implement the basic exponential exhaustive search
   keys = list(VARDICT.keys())
   combos = sum([map(list, combinations(keys, i)) for i in range(len(keys) + 1)], [])
 
