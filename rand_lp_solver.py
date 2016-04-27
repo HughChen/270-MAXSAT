@@ -20,7 +20,7 @@ keys = list(VARDICT.keys())
 
 num_cls = len(clauses)
 num_var = len(VARDICT.keys())
-c = np.append(np.ones(num_cls), np.zeros(num_var))
+c = np.append(-1*np.ones(num_cls), np.zeros(num_var))
 A = np.zeros((num_cls,num_cls+num_var))
 b = np.zeros(num_cls)
 for i in range(0,len(clauses)):
@@ -34,7 +34,8 @@ for i in range(0,len(clauses)):
   		A[i,col] = -1
   	else:
   		A[i,col] = 1
+print c
 print A
 print b
-res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1), options={"disp": True})
+res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1))
 print res
