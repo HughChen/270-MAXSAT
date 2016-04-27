@@ -41,7 +41,7 @@ def lp_solve(input_file):
           A[i,col] = -1
   res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1), options={"disp": True})
 
-  rround = lambda p: 1 if random.random() < p else 0
+  rround = lambda p: True if random.random() < p else False
   x = np.array(map(rround,res['x']))
   print res['x']
   print x
