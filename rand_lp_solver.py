@@ -7,6 +7,7 @@ import numpy as np
 # Load clauses
 (VARDICT,clauses) = parse_file('1.in')
 keys = list(VARDICT.keys())
+keys.sort()
 
 # Construct the LP
 
@@ -20,22 +21,21 @@ keys = list(VARDICT.keys())
 
 num_cls = len(clauses)
 num_var = len(VARDICT.keys())
-c = np.append(-1*np.ones(num_cls), np.zeros(num_var))
+c = -np.append(np.ones(num_cls), np.zeros(num_var))
 A = np.zeros((num_cls,num_cls+num_var))
 b = np.zeros(num_cls)
 for i in range(0,len(clauses)):
   split_clause = clauses[i][2:-2].split(' or ')
-  A[i,i] = -1
+  A[i,i] = 1
   print split_clause
   for j in range(0,len(split_clause)):
   	col = num_cls + keys.index(split_clause[j][-3])
   	if 'not' in split_clause[j]:
-  		b[i] -= 1
-  		A[i,col] = -1
-  	else:
+  		b[i] += 1
   		A[i,col] = 1
-print c
+  	else:
+  		A[i,col] = -1
 print A
 print b
-res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1))
+res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1), options={"disp": True})
 print res
