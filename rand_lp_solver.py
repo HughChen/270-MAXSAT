@@ -2,10 +2,13 @@ from parse_input import parse_file
 from eval_sat import eval_input
 from scipy.optimize import linprog
 
+import random
+
 import numpy as np
 
 def lp_solve(input_file):
   # Load clauses
+  global VARDICT
   (VARDICT,clauses) = parse_file(input_file)
   keys = list(VARDICT.keys())
   keys.sort()
@@ -37,3 +40,16 @@ def lp_solve(input_file):
       else:
           A[i,col] = -1
   res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1), options={"disp": True})
+
+  rround = lambda p: 1 if random.random() < p else 0
+  x = np.array(map(rround,res['x']))
+  print res['x']
+  print x
+  x = x[-num_var:]
+  
+  idx = 0
+  for k in keys:
+    VARDICT[k] = x[idx]
+    idx += 1
+
+
