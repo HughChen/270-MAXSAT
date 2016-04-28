@@ -52,4 +52,19 @@ def lp_solve(input_file):
     VARDICT[k] = x[idx]
     idx += 1
 
+def rand_solve(input_file):
+  global VARDICT
+  (VARDICT,clauses) = parse_file(input_file)
+  randbin = lambda: True if random.randint(0,1) == 1 else False
 
+  for k in VARDICT.keys():
+    VARDICT[k] = randbin()
+
+  # done
+
+def rand_lp_solve(input_file):
+  coin = randint(0,1)
+  if coin == 1:
+    lp_solve(input_file)
+  else:
+    rand_solve(input_file)
