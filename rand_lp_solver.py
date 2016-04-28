@@ -31,7 +31,7 @@ def lp_solve(input_file):
   for i in range(0,len(clauses)):
     split_clause = clauses[i][2:-2].split(' or ')
     A[i,i] = 1
-    print split_clause
+    # print split_clause
     for j in range(0,len(split_clause)):
       col = num_cls + keys.index(split_clause[j][-3])
       if 'not' in split_clause[j]:
@@ -39,12 +39,12 @@ def lp_solve(input_file):
           A[i,col] = 1
       else:
           A[i,col] = -1
-  res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1), options={"disp": True})
+  res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1)) # , options={"disp": True})
 
   rround = lambda p: True if random.random() < p else False
   x = np.array(map(rround,res['x']))
-  print res['x']
-  print x
+  # print res['x']
+  # print x
   x = x[-num_var:]
   
   idx = 0
@@ -63,7 +63,7 @@ def rand_solve(input_file):
   # done
 
 def rand_lp_solve(input_file):
-  coin = randint(0,1)
+  coin = random.randint(0,1)
   if coin == 1:
     lp_solve(input_file)
   else:
