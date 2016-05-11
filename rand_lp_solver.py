@@ -14,13 +14,14 @@ def lp_solve(filename):
   global VARDICT
   (VARDICT,clauses) = parse_file(filename)
   keys = list(VARDICT.keys())
-  
+
   # Construct the LP
   num_cls = len(clauses)
   num_var = len(keys)
   c = -np.append(np.ones(num_cls), np.zeros(num_var))
   A = np.zeros((num_cls,num_cls+num_var))
   b = np.zeros(num_cls)
+  
   for i in range(0,len(clauses)):
     split_clause = clauses[i][2:-2].split(' or ')
     A[i,i] = 1
@@ -31,7 +32,7 @@ def lp_solve(filename):
           A[i,col] = 1
       else:
           A[i,col] = -1
-  res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1)) # , options={"disp": True})
+  res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1)) 
 
   rround = lambda p: True if random.random() < p else False
   x = np.array(map(rround,res['x']))
