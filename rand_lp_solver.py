@@ -14,11 +14,10 @@ def lp_solve(filename):
   global VARDICT
   (VARDICT,clauses) = parse_file(filename)
   keys = list(VARDICT.keys())
-  keys.sort()
-
+  
   # Construct the LP
   num_cls = len(clauses)
-  num_var = len(VARDICT.keys())
+  num_var = len(keys)
   c = -np.append(np.ones(num_cls), np.zeros(num_var))
   A = np.zeros((num_cls,num_cls+num_var))
   b = np.zeros(num_cls)
@@ -37,7 +36,7 @@ def lp_solve(filename):
   rround = lambda p: True if random.random() < p else False
   x = np.array(map(rround,res['x']))
   x = x[-num_var:]
-  
+
   idx = 0
   for k in keys:
     VARDICT[k] = x[idx]
