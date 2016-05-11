@@ -6,12 +6,13 @@ import random
 
 import numpy as np
 
-VARDICT = {}
-
-def lp_solve(input_file):
+def lp_solve(filename):
+  '''Input: filename - name of the file in the 'input/' directory.
+  Output: stores LP assignment in VARDICT
+  ''' 
   # Load clauses
   global VARDICT
-  (VARDICT,clauses) = parse_file(input_file)
+  (VARDICT,clauses) = parse_file(filename)
   keys = list(VARDICT.keys())
   keys.sort()
 
@@ -42,21 +43,25 @@ def lp_solve(input_file):
     VARDICT[k] = x[idx]
     idx += 1
 
-def rand_solve(input_file):
+def rand_solve(filename):
+  '''Input: filename - name of the file in the 'input/' directory.
+  Output: stores uniform random assignment in VARDICT
+  ''' 
   global VARDICT
-  (VARDICT,clauses) = parse_file(input_file)
+  (VARDICT,clauses) = parse_file(filename)
   randbin = lambda: True if random.randint(0,1) == 1 else False
   for k in VARDICT.keys():
     VARDICT[k] = randbin()
 
-def rand_lp_solve(input_file):
-  # Not sure if we have to round per clause or not
+def rand_lp_solve(filename):
+  '''Input: filename - name of the file in the 'input/' directory.
+  Output: VARDICT - greater than 3/4 expected value approximation assignment
+  ''' 
   coin = random.randint(0,1)
   if coin == 1:
-    lp_solve(input_file)
+    lp_solve(filename)
   else:
-    rand_solve(input_file)
-  print VARDICT
+    rand_solve(filename)
   return VARDICT
 
 

@@ -2,7 +2,7 @@ from parse_input import parse_file
 from eval_sat import eval_input
 from itertools import combinations
 
-def exhaustive_solver(filename):
+def exhaustive_solve(filename):
   '''Input: filename - name of the file in the 'input/' directory.
   Output: a tuple of (max_true,best_combo).
   max_true - the optimal number of satisfied clauses.
