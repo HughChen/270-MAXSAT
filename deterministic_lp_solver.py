@@ -24,7 +24,8 @@ def lp_solve(filename):
     split_clause = clauses[i][2:-2].split(' or ')
     A[i,i] = 1
     for j in range(0,len(split_clause)):
-      col = num_cls + keys.index(split_clause[j][-3])
+      var = split_clause[j].split("'")[1]
+      col = num_cls + keys.index(var)
       if 'not' in split_clause[j]:
           b[i] += 1
           A[i,col] = 1

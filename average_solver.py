@@ -11,9 +11,9 @@ def average_solve(filename):
   Output: VARDICT - a dict with one set of optimal assignments.
   ''' 
   x = np.random.uniform()
-  if (x <= 1/3):
+  if (x <= 1.0/3.0):
     return greedy_solve(filename)
-  elif (x <= 2/3):
+  elif (x <= 2.0/3.0):
     return rand_lp_solve(filename)
   else:
     return det_solve(filename)
