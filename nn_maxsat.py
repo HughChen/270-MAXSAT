@@ -1,3 +1,4 @@
+import glob
 import numpy as np
 from sklearn.neural_network import MLPClassifier
 
@@ -7,9 +8,9 @@ import rand_lp_solver
 import greedy_solver 
 import deterministic_lp_solver 
 
-from parse_input import PATH
+PATH = 'input/'
 
-def featurize(input_file,var_dim=1000,clause_dim=1000):
+def featurize(input_file,var_dim=100,clause_dim=1000):
   '''Make sure input_file is rectangular. That means k must be constant for every clause'''
   global VARDICT,clauses,variables
   VARDICT,clauses = parse_input.parse_file(input_file)
@@ -71,9 +72,13 @@ def find_opt(input_file):
   '''Returns (greedy score,random_lp_score,det_lp_score)'''
   _,clauses = parse_input.parse_file(input_file)
   greedy_VARDICT  = greedy_solver.greedy_solve(input_file)
+  print 'greedy'
   rand_VARDICT    = rand_lp_solver.rand_solve(input_file)
-  lp_rand_VARDICT = rand_lp_solver.lp_solve(input_file)
-  det_lp_VARDICT  = deterministic_lp_solver.det_solve(input_file)
+  print 'random'
+  lp_rand_VARDICT,lpres = rand_lp_solver.lp_solve(input_file,True)
+  print 'lp'
+  det_lp_VARDICT  = deterministic_lp_solver.det_solve(input_file,lpres)
+  print 'det lp'
 
   greedy_score = eval_sat.eval_input(greedy_VARDICT,clauses)
   rand_score = eval_sat.eval_input(rand_VARDICT,clauses)
@@ -86,14 +91,21 @@ def find_opt(input_file):
   scores = (scores-min(scores))
   scores = (scores/max(scores) - .5) * 2
 
-  return argmax(scores)
+  return np.argmax(scores)
 
 def get_samples(loc):
-  ifiles = glob.iglob(PATH + loc)
+  ifiles = glob.iglob(PATH + loc + '/*')
   features = []
   labels = []
   for f in ifiles:
-    feat_f = featurize(f)
+    print f
+    f = f[len(PATH):]
+    print f
+    try:
+      feat_f = featurize(f)
+    except:
+      print f
+      return None,None
     label_f = find_opt(f)
     features.append(feat_f)
     labels.append(label_f)

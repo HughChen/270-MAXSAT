@@ -6,7 +6,7 @@ import random
 
 import numpy as np
 
-def lp_solve(filename):
+def lp_solve(filename,resret=False):
   '''Input: filename - name of the file in the 'input/' directory.
   Output: stores LP assignment in VARDICT
   ''' 
@@ -43,6 +43,8 @@ def lp_solve(filename):
   for k in keys:
     VARDICT[k] = x[idx]
     idx += 1
+  if resret:
+    return VARDICT,res
   return VARDICT
 
 def rand_solve(filename):

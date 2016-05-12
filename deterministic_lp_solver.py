@@ -6,7 +6,7 @@ import random
 
 import numpy as np
 
-def lp_solve(filename):
+def lp_solve(filename,res=None):
   '''Input: filename - name of the file in the 'input/' directory.
   Output: returns the solution to the LP
   ''' 
@@ -31,7 +31,10 @@ def lp_solve(filename):
           A[i,col] = 1
       else:
           A[i,col] = -1
-  res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1))
+  print '1'
+  if res is None:
+    res = linprog(c, A_ub=A, b_ub=b, bounds=(0, 1))
+  print '2'
   return res['x'][-num_var:]
 
 def eval_sub_clause(VARDICT,sclause):
@@ -55,7 +58,7 @@ def eval_sub_clause(VARDICT,sclause):
     else:
       return eval_sub_clause(VARDICT,sclause[1:])
 
-def det_solve(filename):
+def det_solve(filename,q=None):
   '''Input: filename - name of the file in the 'input/' directory.
   Output: assigned_vars - greater than 3/4 assignment (deterministic)
   '''
@@ -63,11 +66,10 @@ def det_solve(filename):
   (VARDICT,clauses) = parse_file(filename)
   assigned_vars = {}
   keys = VARDICT.keys()
-  q = lp_solve(filename)
   # Go through and assign each variable
-  q = lp_solve(filename)
+  if q is None:
+    q = lp_solve(filename)
   for i in range(0,len(keys)):
-    print i
     curr_x = keys[i]
     unsat_clauses = []
 
