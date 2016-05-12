@@ -1,7 +1,8 @@
 import random
 
 PATH = 'input/'
-def generate_input(file_name,k,m,n=None):
+
+def random_input(file_name,k,m,n=None):
   '''k is the number of literals per clause, n is the number of clauses'''
   if n is None:
     n = m
