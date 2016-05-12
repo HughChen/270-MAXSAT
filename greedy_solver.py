@@ -15,7 +15,7 @@ def var_from_lit(literal):
   lit_re = re.match(r'(not )?VARDICT\[(.*)\]',literal)
   neg = lit_re.group(1)
   var = lit_re.group(2)
-  return lit_re.group(1) is not None, var[1:-1]
+  return neg is None, var[1:-1]
 
 def greedy_solve(input_file):
   # Load clauses
@@ -37,13 +37,18 @@ def greedy_solve(input_file):
     counts = {}
     for i in range(0,len(list(left))):
       split_clause = list(left)[i][2:-2].split(' or ')
+      alive = 0.0
+      for ll in split_clause:
+        _,v = var_from_lit(ll)
+        if v in lit:
+          alive += 1.0
       for j in range(0,len(split_clause)):
         l = split_clause[j]
         if var_from_lit(l)[1] in lit:
           if l in counts:
-            counts[l] += 1
+            counts[l] += 1.0/alive
           else:
-            counts[l] = 1
+            counts[l] = 1.0/alive
 
     lits = counts.keys()
     most = lits[np.argmax([counts[l] for l in lits])]
@@ -52,7 +57,7 @@ def greedy_solve(input_file):
     for i in range(0,len(left_copy)):
       split_clause = left_copy[i][2:-2].split(' or ')
       if most in split_clause:
-        sub.add(clauses[i])
+        sub.add(left_copy[i])
         left.remove(left_copy[i])
 
     neg,sym = var_from_lit(most)
