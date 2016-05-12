@@ -63,6 +63,7 @@ def det_solve(filename):
   (VARDICT,clauses) = parse_file(filename)
   assigned_vars = {}
   keys = VARDICT.keys()
+  q = lp_solve(filename)
   # Go through and assign each variable
   q = lp_solve(filename)
   for i in range(0,len(keys)):
