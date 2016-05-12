@@ -63,6 +63,7 @@ def det_solve(filename):
   (VARDICT,clauses) = parse_file(filename)
   assigned_vars = {}
   keys = VARDICT.keys()
+  q = lp_solve(filename)
   # Go through and assign each variable
   for i in range(0,len(keys)):
     curr_x = keys[i]
@@ -119,7 +120,6 @@ def det_solve(filename):
       alpha = num/den
 
     # Deterministic Rounding (the order of these if statements matters)
-    q = lp_solve(filename)
     if (alpha >= 1):
       assigned_vars[keys[i]] = True
     elif (alpha <= 0):
