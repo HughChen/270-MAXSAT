@@ -43,6 +43,7 @@ def lp_solve(filename):
   for k in keys:
     VARDICT[k] = x[idx]
     idx += 1
+  return VARDICT
 
 def rand_solve(filename):
   '''Input: filename - name of the file in the 'input/' directory.
@@ -53,6 +54,7 @@ def rand_solve(filename):
   randbin = lambda: True if random.randint(0,1) == 1 else False
   for k in VARDICT.keys():
     VARDICT[k] = randbin()
+  return VARDICT
 
 def rand_lp_solve(filename):
   '''Input: filename - name of the file in the 'input/' directory.

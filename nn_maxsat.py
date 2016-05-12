@@ -66,5 +66,21 @@ def featurize(input_file,var_dim=1000,clause_dim=1000):
   return np.concatenate((s1,s2))
 
 def find_opt(input_file):
-  '''Returns 0 for greedy, 1 for random lp, 2 for deterministic lp'''
-  return 0
+  '''Returns (greedy score,random_lp_score,det_lp_score)/max_score'''
+  _,clauses = parse_input.parse_file(input_file)
+  greedy_VARDICT  = greedy_solver.greedy_solve(input_file)
+  rand_VARDICT    = rand_lp_solver.rand_solve(input_file)
+  lp_rand_VARDICT = rand_lp_solver.lp_solve(input_file)
+  det_lp_VARDICT  = deterministic_lp_solver.det_solve(input_file)
+
+  greedy_score = eval_sat.eval_input(greedy_VARDICT,clauses)
+  rand_score = eval_sat.eval_input(rand_VARDICT,clauses)
+  lp_rand_score = eval_sat.eval_input(lp_rand_VARDICT,clauses)
+  det_lp_score = eval_sat.eval_input(det_lp_VARDICT,clauses)
+
+  rand_alg_score = np.average((rand_score,lp_rand_score))
+
+  scores = np.array([greedy_score,rand_alg_score,det_lp_score],dtype=float)
+  scores = scores/max(scores)
+
+  return scores
