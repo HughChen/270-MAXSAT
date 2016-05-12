@@ -7,6 +7,8 @@ import rand_lp_solver
 import greedy_solver 
 import deterministic_lp_solver 
 
+from parse_input import PATH
+
 def featurize(input_file,var_dim=1000,clause_dim=1000):
   '''Make sure input_file is rectangular. That means k must be constant for every clause'''
   global VARDICT,clauses,variables
@@ -66,7 +68,7 @@ def featurize(input_file,var_dim=1000,clause_dim=1000):
   return np.concatenate((s1,s2))
 
 def find_opt(input_file):
-  '''Returns (greedy score,random_lp_score,det_lp_score)/max_score'''
+  '''Returns (greedy score,random_lp_score,det_lp_score)'''
   _,clauses = parse_input.parse_file(input_file)
   greedy_VARDICT  = greedy_solver.greedy_solve(input_file)
   rand_VARDICT    = rand_lp_solver.rand_solve(input_file)
@@ -81,6 +83,23 @@ def find_opt(input_file):
   rand_alg_score = np.average((rand_score,lp_rand_score))
 
   scores = np.array([greedy_score,rand_alg_score,det_lp_score],dtype=float)
-  scores = scores/max(scores)
+  scores = (scores-min(scores))
+  scores = (scores/max(scores) - .5) * 2
 
-  return scores
+  return argmax(scores)
+
+def get_samples(loc):
+  ifiles = glob.iglob(PATH + loc)
+  features = []
+  labels = []
+  for f in ifiles:
+    feat_f = featurize(f)
+    label_f = find_opt(f)
+    features.append(feat_f)
+    labels.append(label_f)
+  return features,labels
+
+def learn(features,labels):
+  clf = MLPClassifier()
+  clf.fit(features,labels)
+  return clf
