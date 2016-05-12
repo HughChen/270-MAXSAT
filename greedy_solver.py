@@ -59,4 +59,4 @@ def greedy_solve(input_file):
     lit.remove(sym)
     VARDICT[sym] = neg
 
-  return sub
+  return VARDICT
