@@ -54,7 +54,7 @@
 \normalfont \normalsize 
 \textsc{University of California, Berkeley} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge CS270 Final Project - Max SAT Algorithms \\ % The assignment title
+\huge CS270 Final Project - MAX SAT Algorithms \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -70,24 +70,53 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{Introduction}
+\section{Abstract}
+
+Our research topics of interest are the various algorithms used to solve the maximum satisfiability (MAXSAT) problem.  We started by implementing three algorithms for MAXSAT in order to explore derandomization as well as linear programming for approximate algorithms.  The three algorithms we implemented were a 2/3 derandomization algorithm, a 3/4 approximate algorithm, and a 3/4 deterministic algorithm.  First, we analyzed the relative performances of the three algorithms in terns of running time, expected value and variance across random variables with high clause-to-variable ratios.
 
 %------------------------------------------------
 
 \section{Algorithms}
 
-\subsection{(1/2) Stochastic Max SAT}
+\subsection{(2/3) Derandomized MAX SAT}
 
-\subsection{(2/3) Derandomized Max SAT}
+The first algorithm is a derandomized algorithm based on the simplest randomized algorithm for MAX SAT.  The randomized version of this algorithm is simply to take the satisfy each clause with probability $1/2$.  Simply by linearity of expectations, it can be shown that this algorithm has expected value equal to $1/2W$, where $W$ is the total weight of all clauses (for our project we assigned a value of $1$ to all clauses.  
 
-\subsection{(3/4) Stochastic Max SAT (LP)}
+The derandomized algorithm is actually just an application of the method of conditional expectation, which pretty much just iteratively assigns variables based on the expected value of the clauses after each assignment.  This algorithm is known as Johnson's algorithm \cite{Johnson1973} and Chen, Friesen, and Zhang \cite{Chenetal1999} actually showed that the approximation ratio of this derandomized algorithm is $2/3$.
 
-\subsection{(3/4) Deterministic Max SAT}
+\subsection{(3/4) Stochastic MAX SAT (LP)}
 
-\section{Results}
+The second algorithm we implemented was actually one that we proved to be an expected $3/4$ approximation to MAX SAT in homework three.  The algorithm essentially took advantage of a linear program to compute a relaxed version of MAX SAT, where clauses can essentially be partially satisfied.  Then we use results of the LP to assign the variables using Bernoulli distributions.  It turns out that doing the LP rounding with $1/2$ probability versus uniform rounding with $1/2$ has an expected performance of $3/4$, which is a definitive improvement over the uniform stochastic algorithm that we mentioned.  In this project, we're also interested in investigating the mean and the variance of this algorithm empirically, to see if it would even be feasible in practice.
+
+\subsection{(3/4) Deterministic MAX SAT}
+
+The third and final algorithm was a deterministic $3/4$ algorithm for MAX SAT developed by Anke van Zuylen \cite{Zuylen}.  This algorithm looks to be a combination of a potential function based heuristic for variables (from Poloczek and Schnitger \cite{PoloczekandSchnitger2011}) and the linear programming technique we had earlier.  To briefly sum it up, we calculate $\alpha = (W_i + F_i - \bar{W_i})/(F_i + \bar{F_i})$.  $W_i$ and $\bar{W_i}$ are the sums of the weight of unsatisfied clauses that contain $x_i$ and $\bar{x_i}$ respectively, but do not contain $x_{i+1},...,x_n$.  $F_i$ and $\bar{F_i}$ are the sums of the weight of all remaining unsatisfied clauses that contain $x_i$ and $\bar{x_i}$ respectively. 
+
+%------------------------------------------------
 
 \section{Conclusion}
 
-%----------------------------------------------------------------------------------------
+We're interested in three results.  The first is a simple empirical test to see if the averaging across these three algorithms, in much the same way as the second algorithm averages across uniform assignment and LP assignment.
+
+\textbf{have some sweet ass graphs here}
+
+The second result is to investigate the expected value and the variance of our stochastic algorithm to see how well it actually performs.
+
+\textbf{have some sweet ass graphs here}
+
+The third is kind of two-fold.  Firstly, we want to see if there was any visible performance differences among the algorithms.  Then, using the data we collected, we planned to use a neural network to attempt to capture any hidden relationships between the data.
+
+\textbf{have some sweet ass graphs here}
+
+
+
+
+
+
+%------------------------------------------------
+
+\nocite{*}
+\bibliography{final_writeup} 
+\bibliographystyle{plain}
 
 \end{document}

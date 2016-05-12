@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{Chenetal1999}
+J.~Chen, D.~K. Friesen, and H.~Zheng.
+\newblock Tight bound on johnson's algorithm for maximum satisfiability.
+\newblock {\em J. Comput. Sys. Sci.}, 58:622--640, 1999.
+
+\bibitem{Johnson1973}
+D.~S. Johnson.
+\newblock Approximation algorithms for combinatorial problems.
+\newblock {\em J. Comput. System Sci.}, 9:256--278, 1973.
+
+\bibitem{PoloczekandSchnitger2011}
+M.~Poloczek and G.~Schnitger.
+\newblock Randomized variants of johnson's algorithm for max sat.
+\newblock {\em Proceedings of the Twenty-Second Annual ACM-SIAM Symposium on
+  Discrete Algorithms}, pages 656--663, 2011.
+
+\bibitem{Zuylen}
+Anke van Zuylen.
+\newblock Simpler 3/4-approximation algorithms for max sat.
+\newblock {\em Lecture Notes in Computer Science}, 7164:188--197, 2012.
+
+\end{thebibliography}
