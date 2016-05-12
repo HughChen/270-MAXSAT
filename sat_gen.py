@@ -3,7 +3,9 @@ import random
 PATH = 'input/'
 
 def random_input(file_name,k,m,n=None):
-  '''k is the number of literals per clause, n is the number of clauses'''
+  '''Inputs: k - the number of literals per clause
+  m - the number of clauses
+  n - the number of variables'''
   if n is None:
     n = m
   

@@ -33,7 +33,7 @@ def greedy_solve(input_file):
   left = set(clauses)
   lit = set(keys)
 
-  while len(left) > 0 :
+  while len(left) > 0 and len(lit) > 0:
     counts = {}
     for i in range(0,len(list(left))):
       split_clause = list(left)[i][2:-2].split(' or ')
