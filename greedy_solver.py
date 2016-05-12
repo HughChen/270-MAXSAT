@@ -45,7 +45,6 @@ def greedy_solve(input_file):
           else:
             counts[l] = 1
 
-    print counts
     lits = counts.keys()
     most = lits[np.argmax([counts[l] for l in lits])]
     
