@@ -51,7 +51,11 @@ def greedy_solve(input_file):
             counts[l] = 1.0/alive
 
     lits = counts.keys()
-    most = lits[np.argmax([counts[l] for l in lits])]
+    # most = lits[np.argmax([counts[l] for l in lits])]
+    try:
+      most = lits[np.argmax([counts[l] for l in lits])]
+    except:
+      return VARDICT
     
     left_copy = list(left)
     for i in range(0,len(left_copy)):
