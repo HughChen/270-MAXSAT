@@ -24,6 +24,8 @@
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}
+\usepackage[tight]{subfigure}
 
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
@@ -72,46 +74,123 @@
 
 \section{Abstract}
 
-Our research topics of interest are the various algorithms used to solve the maximum satisfiability (MAXSAT) problem.  We started by implementing three algorithms for MAXSAT in order to explore derandomization as well as linear programming for approximate algorithms.  The three algorithms we implemented were a 2/3 derandomization algorithm, a 3/4 approximate algorithm, and a 3/4 deterministic algorithm.  First, we analyzed the relative performances of the three algorithms in terns of running time, expected value and variance across random variables with high clause-to-variable ratios.
+Our research topics of interest are the various algorithms used to solve the maximum satisfiability (MAXSAT) problem.  We started by implementing three algorithms for MAXSAT in order to explore derandomization as well as linear programming for approximate algorithms.  The three algorithms we implemented at first were a 2/3 derandomization algorithm, a 3/4 expected value approximate algorithm, and a 3/4 deterministic algorithm.  After analyzing the results of these algorithms, it became clear that in spite of their empirical analyses, the actual performance may vary.  As a result we analyzed two additional algorithms: a uniform classifier and a neural network classifier for choosing a solver.
 
 %------------------------------------------------
 
 \section{Algorithms}
 
-\subsection{(2/3) Derandomized MAX SAT}
+\subsection{Optimal Exhaustive ($exhaustive\_sat$)}
 
-The first algorithm is a derandomized algorithm based on the simplest randomized algorithm for MAX SAT.  The randomized version of this algorithm is simply to take the satisfy each clause with probability $1/2$.  Simply by linearity of expectations, it can be shown that this algorithm has expected value equal to $1/2W$, where $W$ is the total weight of all clauses (for our project we assigned a value of $1$ to all clauses.  
+The first algorithm is an exhaustive algorithm that checks every possible assignment of variables.  This was straightforward to implement.  
 
-The derandomized algorithm is actually just an application of the method of conditional expectation, which pretty much just iteratively assigns variables based on the expected value of the clauses after each assignment.  This algorithm is known as Johnson's algorithm \cite{Johnson1973} and Chen, Friesen, and Zhang \cite{Chenetal1999} actually showed that the approximation ratio of this derandomized algorithm is $2/3$.
+\subsection{(2/3) Derandomized MAX SAT ($greedy\_sat$)}
 
-\subsection{(3/4) Stochastic MAX SAT (LP)}
+The second algorithm is a derandomized algorithm based on the simplest randomized algorithm for MAX SAT.  The randomized version of this algorithm is simply to take the satisfy each clause with probability $1/2$.  Simply by linearity of expectations, it can be shown that this algorithm has expected value equal to $1/2W$, where $W$ is the total weight of all clauses (for our project we assigned a value of $1$ to all clauses.  
 
-The second algorithm we implemented was actually one that we proved to be an expected $3/4$ approximation to MAX SAT in homework three.  The algorithm essentially took advantage of a linear program to compute a relaxed version of MAX SAT, where clauses can essentially be partially satisfied.  Then we use results of the LP to assign the variables using Bernoulli distributions.  It turns out that doing the LP rounding with $1/2$ probability versus uniform rounding with $1/2$ has an expected performance of $3/4$, which is a definitive improvement over the uniform stochastic algorithm that we mentioned.  In this project, we're also interested in investigating the mean and the variance of this algorithm empirically, to see if it would even be feasible in practice.
+The derandomized algorithm is actually just an application of the method of conditional expectation, which pretty much just iteratively assigns variables based on the expected value of the clauses after each assignment.  This algorithm is known as Johnson's algorithm \cite{Johnson1973} and Chen, Friesen, and Zhang \cite{Chenetal1999} actually showed that the approximation ratio of this derandomized algorithm is $2/3$.  
 
-\subsection{(3/4) Deterministic MAX SAT}
+\subsection{(3/4) Stochastic MAX SAT ($randlp\_sat$)}
 
-The third and final algorithm was a deterministic $3/4$ algorithm for MAX SAT developed by Anke van Zuylen \cite{Zuylen}.  This algorithm looks to be a combination of a potential function based heuristic for variables (from Poloczek and Schnitger \cite{PoloczekandSchnitger2011}) and the linear programming technique we had earlier.  To briefly sum it up, we calculate $\alpha = (W_i + F_i - \bar{W_i})/(F_i + \bar{F_i})$.  $W_i$ and $\bar{W_i}$ are the sums of the weight of unsatisfied clauses that contain $x_i$ and $\bar{x_i}$ respectively, but do not contain $x_{i+1},...,x_n$.  $F_i$ and $\bar{F_i}$ are the sums of the weight of all remaining unsatisfied clauses that contain $x_i$ and $\bar{x_i}$ respectively. 
+The third algorithm we implemented was actually one that we proved to be an expected $3/4$ approximation to MAX SAT in homework three.  The algorithm essentially took advantage of a linear program to compute a relaxed version of MAX SAT, where clauses can essentially be partially satisfied.  Then we use results of the LP to assign the variables using Bernoulli distributions.  It turns out that doing the LP rounding with $1/2$ probability versus uniform rounding with $1/2$ has an expected performance of $3/4$, which is a definitive improvement over the uniform stochastic algorithm that we mentioned.  In this project, we're also interested in investigating the mean and the variance of this algorithm empirically, to see if it would even be feasible in practice.  
+
+\subsection{(3/4) Deterministic MAX SAT ($detlp\_sat$)}
+
+The fourth algorithm was a deterministic $3/4$ algorithm for MAX SAT developed by Anke van Zuylen \cite{Zuylen}.  This algorithm looks to be a combination of a potential function based heuristic for variables (from Poloczek and Schnitger \cite{PoloczekandSchnitger2011}) and the linear programming technique we had earlier.  To briefly sum it up, we calculate $\alpha = (W_i + F_i - \bar{W_i})/(F_i + \bar{F_i})$.  $W_i$ and $\bar{W_i}$ are the sums of the weight of unsatisfied clauses that contain $x_i$ and $\bar{x_i}$ respectively, but do not contain $x_{i+1},...,x_n$.  $F_i$ and $\bar{F_i}$ are the sums of the weight of all remaining unsatisfied clauses that contain $x_i$ and $\bar{x_i}$ respectively.
+
+\subsection{Average Solver MAX SAT ($average\_sat$)}
+
+The fifth algorithm was quite simple.  We basically uniformly chose between our three non-exhaustive algorithms.  This algorithm was inspired by the homework algorithm which averaged between the uniform solver and the random linear program.  Another way to look at it is as a sort of preliminary ensemble algorithm.  A related work is the actual ensemble version of MAX SAT solvers using random decision forests \cite{POS-14:New_CNF_Features_and_Formula_Classification}.  In this paper, they discuss feature extraction from CNF formulas as well their machine learning approach to this classification test.
+
+\subsection{Neural Network MAX SAT ($nn\_sat$)}
+
+This algorithm is another original algorithm that we attempt to use in this project, which extends upon the naive $average\_sat$ ensemble algorithm.   The idea is that we observed that $greedy\_sat$ performs a great deal better than the other algorithms on the random inputs we used, we wanted to identify which cases were "hard" to $greedy\_sat$.  To do this, we encoded features that were just the eigenvalues of two adjacency matrices.  The first adjacency matrix used variables as vertices and clauses as edges.  The second used clauses as vertices and variables as edges.  We used eigenvalues in order to convey the connectivity of our CNF formulas.  Ideally, the neural network would classify an input to be best solved by either $greedy\_sat$, $randlp\_sat$, and $detlp\_sat$.  Ultimately, our neural network wasn't successful in differentiating inputs and it unilaterally chose $greedy\_sat$, we'll further discuss why in section \ref{Conclusion}.
 
 %------------------------------------------------
 
 \section{Conclusion}
+\label{Conclusion}
 
-We're interested in three results.  The first is a simple empirical test to see if the averaging across these three algorithms, in much the same way as the second algorithm averages across uniform assignment and LP assignment.
+\subsection{Results}
+\label{Results}
+ We generated random sets of data given three parameters: k (number of literals), m (number of clauses), n (number of variables).  Generating uniform samples given these parameters becomes a fairly straightforward problem of sampling variables and flipping them randomly.\\
 
-\textbf{have some sweet ass graphs here}
+\begin{figure}[h!]
+\vspace{-0.1in}
+\centerline{
+\subfigure[$greedy\_sat$]{
+    \includegraphics[scale=0.35]{fig/heatmap/nt_greedy}
+}
+\subfigure[$randlp\_sat$]{
+    \includegraphics[scale=0.35]{fig/heatmap/nt_randlp}
+}}
+\vspace{0.1in}
+\centerline{
+\subfigure[$detlp\_sat$]{
+	\includegraphics[scale=0.35]{fig/heatmap/nt_detlp}
+}
+\subfigure[$average\_sat$]{
+    \includegraphics[scale=0.35]{fig/heatmap/nt_average}
+}
+}
+\vspace{-0.1in}
+\caption{We generated five random sets of data for 3SAT with number of variables ranging from 2 to 10 and number of clauses ranging from 1 to 50.  Then we ran all of the algorithms across the data sets and found the average performance.}
+\label{nt_heatmap}
+\end{figure}
 
-The second result is to investigate the expected value and the variance of our stochastic algorithm to see how well it actually performs.
+The first results we look at are across five random sets of data for 3SAT, with a range of cardinality for both variables and clauses. We plotted this in a heatmap to get a bit of a sense where different algorithms do better.  This becomes the inspiration for our machine learning approach to choosing a SAT solver.  We can see that even across the average of five sets of data, there are different areas we certain algorithms perform better.  In figure \ref{nt_heatmap} we can see a bit of the difference in performance.  Additionally we recorded the run times across the algorithms in order to illustrate the differences in complexity (in figure \ref{rt_heatmap}).  In certain cases it may be worth it to simply use algorithms with lower performance guarantees, because the performance is strong enough empirically and their complexity is low.  Conversely, we also see in subfigure 3.2.a that the performance of the exhaustive solver heavily depends on the number of variables, in which case there may still be certain times when it's tractable to use.\\
 
-\textbf{have some sweet ass graphs here}
+\begin{figure}[ht]
+\vspace{-0.1in}
+\centerline{
+\subfigure[$exhaustive\_sat$]{
+	\includegraphics[scale=0.3]{fig/heatmap/rt_heatmap_exh}
+	\label{exh_rt}
+}
+\subfigure[$greedy\_sat$]{
+    \includegraphics[scale=0.3]{fig/heatmap/rt_heatmap_greedy}
+}
+\subfigure[$randlp\_sat$]{
+    \includegraphics[scale=0.3]{fig/heatmap/rt_heatmap_randlp}
+}}
+\vspace{0.1in}
+\centerline{
+\subfigure[$detlp\_sat$]{
+	\includegraphics[scale=0.3]{fig/heatmap/rt_heatmap_detlp}
+}
+\subfigure[$average\_sat$]{
+    \includegraphics[scale=0.3]{fig/heatmap/rt_heatmap_average}
+}
+}
+\vspace{-0.1in}
+\caption{We generated five random sets of data for 3SAT with number of variables ranging from 2 to 10 and number of clauses ranging from 1 to 50.  Then we ran all of the algorithms across the data sets and found the average runtime.  The colors represent the ratio of the sat solvers' performance over the optimal performance.}
+\label{rt_heatmap}
+\end{figure}
 
-The third is kind of two-fold.  Firstly, we want to see if there was any visible performance differences among the algorithms.  Then, using the data we collected, we planned to use a neural network to attempt to capture any hidden relationships between the data.
+In figure \ref{rt_heatmap}, we can also see that the greedy save outperforms the other algorithms quite handily.  This is surprising because the greedy algorithm is actually the one with the lowest bound on it's performance in the proof.  This unilateral performance inspired us to try to figure out what is "hard" to this conditionally derandomized algorithm.  Unfortunately the algorithm performed so much better that we were either unable to generate enough data in order to give the neural net enough to go off of or we simply didn't have the resources to run an example with large enough parameters.\\
 
-\textbf{have some sweet ass graphs here}
+The second results that we look at are across different values of $k$, since all the previous example were on $k=3$ examples with other parameters varying.  For these varying $k$ values we use a constant number of variables (10) and a varying number of clauses, in order to satisfy this critical clause-to-variables heuristic of $c=(log(2^k/(2^k-1)))^{-1}$.  This critical heuristic was borrowed from: https://toughsat.appspot.com/.\\
 
+\begin{figure}[ht]
+\vspace{-0.1in}
+\centerline{
+\subfigure[$detlp\_sat$]{
+	\includegraphics[scale=0.45]{fig/fixedk/average}
+}
+\subfigure[$average\_sat$]{
+    \includegraphics[scale=0.45]{fig/fixedk/variance}
+}
+}
+\vspace{-0.1in}
+\caption{Computed over ratio of performance to optimal performance across random inputs with consistent parameters.}
+\label{statistics}
+\end{figure}
 
+In figure \ref{statistics}, we can see that $greedy\_sat$ outperforms the other algorithms pretty handily, but as the value of $k$ increases we their performance begins to converge.  Additionally, for the variance, we might expect the stochastic algorithms to have much higher variance, because the stochasticity of the inputs is compounded by that of the algorithm.  In fact, that doesn't appear to be the case, with $randlp\_sat$, $detlp\_sat$, $average\_sat$ all having quite similar values for variance.  This implies that our random algorithms may actually be sufficient in practice.
 
+\subsection{Future Work}
 
-
+Ultimately, we didn't have the resources to really investigate a huge variety of parameters.  In the future, if we were to work on this algorithm, there are quite a few additions we could make.  Generating more data would help us identify if there are any obviously discernible features and allow us to have a greater chance of generating interesting inputs that the neural network might actually assign to different algorithms.   Additionally, there are many more interesting MAX SAT algorithms that may have performance that is capable of matching up with the greedy algorithm.  Having other competitive algorithms would likely actually strengthen our ensemble algorithm.  One final augmentation to our neural network is to implement more features, potentially from the Alfonso and Manthey's paper on random decision forests for SAT solving \cite{POS-14:New_CNF_Features_and_Formula_Classification}.
 
 %------------------------------------------------
 

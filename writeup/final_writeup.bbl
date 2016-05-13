@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{POS-14:New_CNF_Features_and_Formula_Classification}
+Enrique Alfonso and Norbert Manthey.
+\newblock New cnf features and formula classification.
+\newblock In Daniel~Le Berre, editor, {\em POS-14. Fifth Pragmatics of SAT
+  workshop}, volume~27 of {\em EPiC Series in Computing}, pages 57--71.
+  EasyChair, 2014.
+
 \bibitem{Chenetal1999}
 J.~Chen, D.~K. Friesen, and H.~Zheng.
 \newblock Tight bound on johnson's algorithm for maximum satisfiability.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAY 2016 03:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAY 2016 18:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -382,6 +382,54 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip53
 \dth@everypar=\toks25
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count101
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip54
+\subfigcapskip=\skip55
+\subfigcaptopadj=\dimen115
+\subfigbottomskip=\skip56
+\subfigcapmargin=\dimen116
+\subfiglabelskip=\skip57
+\c@subfigure=\count102
+\c@lofdepth=\count103
+\c@subtable=\count104
+\c@lotdepth=\count105
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip58
+\subfig@bottom=\skip59
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
@@ -392,141 +440,450 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              I'd suggest to use 
 (scrartcl)              package `scrlayer-scrpage'.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `fancyhdr' on input line 32.
+(scrartcl)              package `fancyhdr' on input line 34.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip54
-\f@ncyO@elh=\skip55
-\f@ncyO@erh=\skip56
-\f@ncyO@olh=\skip57
-\f@ncyO@orh=\skip58
-\f@ncyO@elf=\skip59
-\f@ncyO@erf=\skip60
-\f@ncyO@olf=\skip61
-\f@ncyO@orf=\skip62
+\fancy@headwidth=\skip60
+\f@ncyO@elh=\skip61
+\f@ncyO@erh=\skip62
+\f@ncyO@olh=\skip63
+\f@ncyO@orh=\skip64
+\f@ncyO@elf=\skip65
+\f@ncyO@erf=\skip66
+\f@ncyO@olf=\skip67
+\f@ncyO@orf=\skip68
 )
 (./final_writeup.aux)
 \openout1 = `final_writeup.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 65.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 67.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 67.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 65.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 67.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 65.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 67.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 67.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 68.
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count106
+\scratchdimen=\dimen117
+\scratchbox=\box29
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen118
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks27
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 70.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 68
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 70
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 68.
+(Font)              scaled to size 13.24796pt on input line 70.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 68.
+(Font)              scaled to size 9.19998pt on input line 70.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 68.
+(Font)              scaled to size 7.35999pt on input line 70.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 68.
+(Font)              scaled to size 13.24796pt on input line 70.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 68.
+(Font)              scaled to size 9.19998pt on input line 70.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 68.
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+(Font)              scaled to size 7.35999pt on input line 70.
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 83.
+(Font)              scaled to size 11.03998pt on input line 83.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 83.
+(Font)              scaled to size 8.27998pt on input line 83.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 83.
+(Font)              scaled to size 6.43999pt on input line 83.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 83.
+(Font)              scaled to size 11.03998pt on input line 83.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 83.
+(Font)              scaled to size 8.27998pt on input line 83.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 83.
+(Font)              scaled to size 6.43999pt on input line 83.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 89.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 89.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 89.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 89.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 89.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 89.
  [1
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 101.
- (./final_writeup.bbl [2]) [3] (./final_writeup.aux) ) 
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+Package epstopdf Info: Source file: <fig/heatmap/nt_greedy.eps>
+(epstopdf)                    date: 2016-05-12 17:32:39
+(epstopdf)                    size: 24819 bytes
+(epstopdf)             Output file: <fig/heatmap/nt_greedy-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2016-05-12 17:35:34
+(epstopdf)                    size: 11332 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/nt_greedy-eps-
+converted-to.pdf fig/heatmap/nt_greedy.eps>
+(epstopdf)             \includegraphics on input line 126.
+Package epstopdf Info: Output file is already uptodate.
+<fig/heatmap/nt_greedy-eps-converted-to.pdf, id=13, 557.08125pt x 317.185pt>
+File: fig/heatmap/nt_greedy-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/heatmap/nt_greedy-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/nt_greedy-eps-converted-to.pdf used on inp
+ut line 126.
+(pdftex.def)             Requested size: 194.98135pt x 111.0164pt.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 126.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 126.
+Package epstopdf Info: Source file: <fig/heatmap/nt_randlp.eps>
+(epstopdf)                    date: 2016-05-12 17:33:02
+(epstopdf)                    size: 25484 bytes
+(epstopdf)             Output file: <fig/heatmap/nt_randlp-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2016-05-12 17:35:35
+(epstopdf)                    size: 12058 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/nt_randlp-eps-
+converted-to.pdf fig/heatmap/nt_randlp.eps>
+(epstopdf)             \includegraphics on input line 126.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/nt_randlp-eps-converted-to.pdf, id=14, 557.08125pt x 317.185pt>
+File: fig/heatmap/nt_randlp-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/heatmap/nt_randlp-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/nt_randlp-eps-converted-to.pdf used on inp
+ut line 126.
+(pdftex.def)             Requested size: 194.98135pt x 111.0164pt.
+Package epstopdf Info: Source file: <fig/heatmap/nt_detlp.eps>
+(epstopdf)                    date: 2016-05-12 17:34:05
+(epstopdf)                    size: 25482 bytes
+(epstopdf)             Output file: <fig/heatmap/nt_detlp-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2016-05-12 17:35:35
+(epstopdf)                    size: 11919 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/nt_detlp-eps-c
+onverted-to.pdf fig/heatmap/nt_detlp.eps>
+(epstopdf)             \includegraphics on input line 135.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/nt_detlp-eps-converted-to.pdf, id=15, 557.08125pt x 317.185pt>
+File: fig/heatmap/nt_detlp-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/heatmap/nt_detlp-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/nt_detlp-eps-converted-to.pdf used on inpu
+t line 135.
+(pdftex.def)             Requested size: 194.98135pt x 111.0164pt.
+Package epstopdf Info: Source file: <fig/heatmap/nt_average.eps>
+(epstopdf)                    date: 2016-05-12 17:34:22
+(epstopdf)                    size: 25275 bytes
+(epstopdf)             Output file: <fig/heatmap/nt_average-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2016-05-12 17:35:35
+(epstopdf)                    size: 11936 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/nt_average-eps
+-converted-to.pdf fig/heatmap/nt_average.eps>
+(epstopdf)             \includegraphics on input line 135.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/nt_average-eps-converted-to.pdf, id=16, 557.08125pt x 317.185pt>
+File: fig/heatmap/nt_average-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/heatmap/nt_average-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/nt_average-eps-converted-to.pdf used on in
+put line 135.
+(pdftex.def)             Requested size: 194.98135pt x 111.0164pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+[3 <./fig/heatmap/nt_greedy-eps-converted-to.pdf> <./fig/heatmap/nt_randlp-eps-
+converted-to.pdf> <./fig/heatmap/nt_detlp-eps-converted-to.pdf> <./fig/heatmap/
+nt_average-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig/heatmap/rt_heatmap_exh.eps>
+(epstopdf)                    date: 2016-05-12 15:45:45
+(epstopdf)                    size: 22120 bytes
+(epstopdf)             Output file: <fig/heatmap/rt_heatmap_exh-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2016-05-12 15:49:13
+(epstopdf)                    size: 10957 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/rt_heatmap_exh
+-eps-converted-to.pdf fig/heatmap/rt_heatmap_exh.eps>
+(epstopdf)             \includegraphics on input line 155.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/rt_heatmap_exh-eps-converted-to.pdf, id=64, 546.04pt x 317.185pt>
+File: fig/heatmap/rt_heatmap_exh-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/heatmap/rt_heatmap_exh-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/rt_heatmap_exh-eps-converted-to.pdf used o
+n input line 155.
+(pdftex.def)             Requested size: 163.81326pt x 95.15622pt.
+Package epstopdf Info: Source file: <fig/heatmap/rt_heatmap_greedy.eps>
+(epstopdf)                    date: 2016-05-12 15:47:29
+(epstopdf)                    size: 84430 bytes
+(epstopdf)             Output file: <fig/heatmap/rt_heatmap_greedy-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2016-05-12 15:49:13
+(epstopdf)                    size: 12363 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/rt_heatmap_gre
+edy-eps-converted-to.pdf fig/heatmap/rt_heatmap_greedy.eps>
+(epstopdf)             \includegraphics on input line 155.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/rt_heatmap_greedy-eps-converted-to.pdf, id=65, 560.0925pt x 317.18
+5pt>
+File: fig/heatmap/rt_heatmap_greedy-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use fig/heatmap/rt_heatmap_greedy-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/rt_heatmap_greedy-eps-converted-to.pdf use
+d on input line 155.
+(pdftex.def)             Requested size: 168.02904pt x 95.15622pt.
+Package epstopdf Info: Source file: <fig/heatmap/rt_heatmap_randlp.eps>
+(epstopdf)                    date: 2016-05-12 15:47:43
+(epstopdf)                    size: 21446 bytes
+(epstopdf)             Output file: <fig/heatmap/rt_heatmap_randlp-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2016-05-12 15:49:14
+(epstopdf)                    size: 11506 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/rt_heatmap_ran
+dlp-eps-converted-to.pdf fig/heatmap/rt_heatmap_randlp.eps>
+(epstopdf)             \includegraphics on input line 155.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/rt_heatmap_randlp-eps-converted-to.pdf, id=66, 555.07375pt x 317.1
+85pt>
+File: fig/heatmap/rt_heatmap_randlp-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use fig/heatmap/rt_heatmap_randlp-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/rt_heatmap_randlp-eps-converted-to.pdf use
+d on input line 155.
+(pdftex.def)             Requested size: 166.52339pt x 95.15622pt.
+Package epstopdf Info: Source file: <fig/heatmap/rt_heatmap_detlp.eps>
+(epstopdf)                    date: 2016-05-12 15:47:51
+(epstopdf)                    size: 21222 bytes
+(epstopdf)             Output file: <fig/heatmap/rt_heatmap_detlp-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2016-05-12 15:49:14
+(epstopdf)                    size: 11175 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/rt_heatmap_det
+lp-eps-converted-to.pdf fig/heatmap/rt_heatmap_detlp.eps>
+(epstopdf)             \includegraphics on input line 164.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/rt_heatmap_detlp-eps-converted-to.pdf, id=67, 555.07375pt x 317.18
+5pt>
+File: fig/heatmap/rt_heatmap_detlp-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use fig/heatmap/rt_heatmap_detlp-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/rt_heatmap_detlp-eps-converted-to.pdf used
+ on input line 164.
+(pdftex.def)             Requested size: 166.52339pt x 95.15622pt.
+Package epstopdf Info: Source file: <fig/heatmap/rt_heatmap_average.eps>
+(epstopdf)                    date: 2016-05-12 15:48:11
+(epstopdf)                    size: 21678 bytes
+(epstopdf)             Output file: <fig/heatmap/rt_heatmap_average-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2016-05-12 15:49:14
+(epstopdf)                    size: 11497 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/heatmap/rt_heatmap_ave
+rage-eps-converted-to.pdf fig/heatmap/rt_heatmap_average.eps>
+(epstopdf)             \includegraphics on input line 164.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/heatmap/rt_heatmap_average-eps-converted-to.pdf, id=68, 555.07375pt x 317.
+185pt>
+File: fig/heatmap/rt_heatmap_average-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use fig/heatmap/rt_heatmap_average-eps-converted-to.pdf>
+Package pdftex.def Info: fig/heatmap/rt_heatmap_average-eps-converted-to.pdf us
+ed on input line 164.
+(pdftex.def)             Requested size: 166.52339pt x 95.15622pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+Package epstopdf Info: Source file: <fig/fixedk/average.eps>
+(epstopdf)                    date: 2016-05-12 18:22:15
+(epstopdf)                    size: 18327 bytes
+(epstopdf)             Output file: <fig/fixedk/average-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-12 18:23:16
+(epstopdf)                    size: 9883 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/fixedk/average-eps-con
+verted-to.pdf fig/fixedk/average.eps>
+(epstopdf)             \includegraphics on input line 183.
+Package epstopdf Info: Output file is already uptodate.
+<fig/fixedk/average-eps-converted-to.pdf, id=69, 503.8825pt x 425.59pt>
+File: fig/fixedk/average-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/fixedk/average-eps-converted-to.pdf>
+Package pdftex.def Info: fig/fixedk/average-eps-converted-to.pdf used on input 
+line 183.
+(pdftex.def)             Requested size: 226.74503pt x 191.51372pt.
+Package epstopdf Info: Source file: <fig/fixedk/variance.eps>
+(epstopdf)                    date: 2016-05-12 18:22:03
+(epstopdf)                    size: 18354 bytes
+(epstopdf)             Output file: <fig/fixedk/variance-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-12 18:23:17
+(epstopdf)                    size: 9888 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/fixedk/variance-eps-co
+nverted-to.pdf fig/fixedk/variance.eps>
+(epstopdf)             \includegraphics on input line 183.
+Package epstopdf Info: Output file is already uptodate.
+
+<fig/fixedk/variance-eps-converted-to.pdf, id=70, 522.95375pt x 425.59pt>
+File: fig/fixedk/variance-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/fixedk/variance-eps-converted-to.pdf>
+Package pdftex.def Info: fig/fixedk/variance-eps-converted-to.pdf used on input
+ line 183.
+(pdftex.def)             Requested size: 235.32701pt x 191.51372pt.
+ [4 <./fig/heatmap/rt_heatmap_exh-eps-converted-to.pdf> <./fig/heatmap/rt_heatm
+ap_greedy-eps-converted-to.pdf> <./fig/heatmap/rt_heatmap_randlp-eps-converted-
+to.pdf> <./fig/heatmap/rt_heatmap_detlp-eps-converted-to.pdf> <./fig/heatmap/rt
+_heatmap_average-eps-converted-to.pdf>] (./final_writeup.bbl [5 <./fig/fixedk/a
+verage-eps-converted-to.pdf> <./fig/fixedk/variance-eps-converted-to.pdf>]) [6]
+ (./final_writeup.aux) ) 
 Here is how much of TeX's memory you used:
- 4122 strings out of 493089
- 60220 string characters out of 6134842
- 175572 words of memory out of 5000000
- 7525 multiletter control sequences out of 15000+600000
- 98510 words of font info for 107 fonts, out of 8000000 for 9000
+ 5707 strings out of 493089
+ 85834 string characters out of 6134842
+ 204275 words of memory out of 5000000
+ 9014 multiletter control sequences out of 15000+600000
+ 135543 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,47p,789b,306s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/
-texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/font
-s/type1/public/fourier/fourier-mlit.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/
-utopia/putri8a.pfb>
-Output written on final_writeup.pdf (3 pages, 58782 bytes).
+ 47i,10n,47p,1089b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier
+-mlit.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourie
+r-ms.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on final_writeup.pdf (6 pages, 139639 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 171 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
