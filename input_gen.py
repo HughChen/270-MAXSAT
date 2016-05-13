@@ -22,7 +22,7 @@ ratio = {2:2.4,\
 
 for k in xrange(2,7):
   for i in range(0,3000):
-    num_clause = random.randint(100,1000)
+    num_clause = random.randint(30,150)
     try:
       num_vars = random.randint(int(np.log2(num_clause) + 2),int(num_clause/ratio[k]))
     except:

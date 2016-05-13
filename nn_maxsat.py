@@ -1,6 +1,8 @@
 import glob
+import random
 import numpy as np
 from sklearn.neural_network import MLPClassifier
+import pickle
 
 import parse_input 
 import eval_sat 
@@ -88,15 +90,26 @@ def find_opt(input_file):
   rand_alg_score = np.average((rand_score,lp_rand_score))
 
   scores = np.array([greedy_score,rand_alg_score,det_lp_score],dtype=float)
+  print scores
   scores = (scores-min(scores))
   scores = (scores/max(scores) - .5) * 2
 
+  scores = (scores == max(scores))
+  scores = scores/sum(scores)
+  scores = np.cumsum(scores)
+
+  p = random.random()
+
+  for i in xrange(len(scores)):
+    if p < scores[i]:
+      return i
   return np.argmax(scores)
 
-def get_samples(loc):
-  ifiles = glob.iglob(PATH + loc + '/*')
+def get_samples(loc,files='*'):
+  ifiles = glob.iglob(PATH + loc + '/' + files)
   features = []
   labels = []
+  ctr = 1
   for f in ifiles:
     print f
     f = f[len(PATH):]
@@ -109,6 +122,10 @@ def get_samples(loc):
     label_f = find_opt(f)
     features.append(feat_f)
     labels.append(label_f)
+    if ctr % 100 == 0:
+      np.save(PATH + 'features',features)
+      np.save(PATH + 'labels',labels)
+    ctr += 1
   return features,labels
 
 def learn(features,labels):
